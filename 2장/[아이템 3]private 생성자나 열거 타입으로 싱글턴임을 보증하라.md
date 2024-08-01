@@ -62,10 +62,10 @@ public class Client {
 ```java
 // Elvis 클래스 정의
 public class Elvis {
-		public static final Elvis INSTANCE = new Elvis();
-		private Elvis() { ... }  // private 생성자로 외부에서 인스턴스화하지 못하도록 막음
-		
-		public void sing() {
+	public static final Elvis INSTANCE = new Elvis();
+	private Elvis() { ... }  // private 생성자로 외부에서 인스턴스화하지 못하도록 막음
+	
+	public void sing() {
         System.out.println("Singing..");
     }
 }
@@ -152,14 +152,14 @@ public class Main {
 
 ```java
 public class Elvis {
-		// 싱글턴 인스턴스 (private)
-		private static final Elvis INSTANCE = new Elvis();
-		private Elvis() { ... }
-		public static Elvis getInstance() { 
-				return INSTANCE; 
-		}
-		
-		public void sing() {
+	// 싱글턴 인스턴스 (private)
+	private static final Elvis INSTANCE = new Elvis();
+	private Elvis() { ... }
+	public static Elvis getInstance() { 
+			return INSTANCE; 
+	}
+	
+	public void sing() {
         System.out.println("Singing..");
     }
 }
@@ -187,15 +187,15 @@ public class Main {
     
     ```java
     public class Elvis {
-    		// 싱글턴 인스턴스 (private)
-    		private static final Elvis INSTANCE = new Elvis();
-    		private Elvis() { ... }
-    		public static Elvis getInstance() { 
-    				// INSTANCE 대신에 새로운 인스턴스 생성
-    				return new Elvis(); 
-    		}
-    		
-    		public void sing() {
+	// 싱글턴 인스턴스 (private)
+	private static final Elvis INSTANCE = new Elvis();
+	private Elvis() { ... }
+	public static Elvis getInstance() { 
+			// INSTANCE 대신에 새로운 인스턴스 생성
+			return new Elvis(); 
+	}
+	
+	public void sing() {
             System.out.println("Singing..");
         }
     }
@@ -251,20 +251,20 @@ public class Main {
 
 ```java
 public class Elvis {
-		// 싱글턴 인스턴스 (private)
-		private static final Elvis INSTANCE = new Elvis();
-		private Elvis() { ... }
-		public static Elvis getInstance() { 
-				return INSTANCE; 
-		}
-		
-		// 싱글턴임을 보장해주는 readResolve 메서드
-		private Object readResolve() {
-				// 진짜 Elvis를 반환하고 가짜 Elvis는 가비지 컬렉터에 맡김
-				return INSTANCE;
-		}
-		
-		public void sing() {
+	// 싱글턴 인스턴스 (private)
+	private static final Elvis INSTANCE = new Elvis();
+	private Elvis() { ... }
+	public static Elvis getInstance() { 
+			return INSTANCE; 
+	}
+	
+	// 싱글턴임을 보장해주는 readResolve 메서드
+	private Object readResolve() {
+			// 진짜 Elvis를 반환하고 가짜 Elvis는 가비지 컬렉터에 맡김
+			return INSTANCE;
+	}
+	
+	public void sing() {
         System.out.println("Singing..");
     }
 }
@@ -277,7 +277,7 @@ public class Elvis {
 
 ```java
 public enum Elvis {
-		INSTANCE;
+	INSTANCE;
 }
 ```
 
@@ -301,11 +301,11 @@ public enum Elvis {
     
     // Elvis 열거 타입은 싱글턴을 구현, ElvisInterface를 구현
     public enum Elvis implements ElvisInterface {
-    		INSTANCE;
-    		
-    		@Override
-    		public void sing() {
-    				System.out.println("singing~");
-    		}
+	INSTANCE;
+	
+	@Override
+	public void sing() {
+			System.out.println("singing~");
+	}
     }
     ```
